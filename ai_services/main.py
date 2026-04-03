@@ -15,7 +15,7 @@ load_dotenv()  # Load .env file for API keys
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 
-from routers import biometric, network, triage, honeypot, federation, gnn, redteam
+from routers import biometric, network, triage, honeypot, federation, gnn, redteam, demo
 
 app = FastAPI(
     title="FinShield AI Services",
@@ -39,6 +39,7 @@ app.include_router(honeypot.router,  prefix="/api/honeypot",   tags=["F5 Honeypo
 app.include_router(federation.router, prefix="/api/federation", tags=["F6 Federation"])
 app.include_router(gnn.router,       prefix="/api/gnn",        tags=["F7 GNN"])
 app.include_router(redteam.router,   prefix="/api/redteam",    tags=["F8 RedTeam"])
+app.include_router(demo.router,      prefix="/api/demo",       tags=["Demo"])
 
 # Also mount honeypot catch-all at /honeypot for the trap endpoint
 app.include_router(honeypot.router, prefix="/honeypot", tags=["F5 Honeypot Trap"], include_in_schema=False)
