@@ -1,0 +1,3 @@
+# LangGraph / LLM agents go here:
+# triage_graph.py        — LangGraph StateGraph for F4 triage
+# honeypot_responder.py  — LLM-driven honeypot response logic (F5)

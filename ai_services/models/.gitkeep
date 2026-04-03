@@ -1,0 +1,4 @@
+# ML model definitions go here:
+# biometric_model.py  — InceptionV3 CNN (F1)
+# gnn_model.py        — GraphSAGE (F7)
+# schemas.py          — Pydantic request/response models (all features)

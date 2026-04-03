@@ -1,0 +1,8 @@
+# Feature routers go here:
+# biometric.py   — F1 Biometric Inference
+# network.py     — F3 Network Clustering
+# triage.py      — F4 LangGraph Triage Agent
+# honeypot.py    — F5 Honeypot Routing
+# federation.py  — F6 Flower Federated Learning
+# gnn.py         — F7 GraphSAGE Fraud Detection
+# redteam.py     — F8 RL Red Team Simulation

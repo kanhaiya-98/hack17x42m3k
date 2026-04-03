@@ -1,0 +1,6 @@
+# Utility & training scripts go here:
+# train_biometric.py       — F1 CNN training (~30 min CPU → model.h5)
+# train_gnn.py             — F7 GraphSAGE training (~20 min → gnn_model.pt)
+# generate_mule_dataset.py — F7 synthetic mule ring data
+# red_team_sim.py          — F8 RL simulation loop
+# seed_demo_data.py        — Seed Supabase with demo sessions/transactions
