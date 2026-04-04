@@ -25,7 +25,7 @@ export default function Footer() {
         </div>
 
         <p className="text-sm text-zinc-500">
-          Cyber Cypher 5.0 Hackathon
+          Made by Team Hackstronauts
         </p>
 
         <div className="flex items-center gap-6">
