@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import ParticleBackground from "./ParticleBackground";
+import Globe from "./Globe";
 
 const headline = "Every bot. Every fraud ring. Stopped before it starts.";
 
@@ -15,6 +16,11 @@ export default function HeroSection() {
       <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/10 blur-[120px]" />
         <div className="absolute left-1/3 top-1/3 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/8 blur-[100px]" />
+      </div>
+
+      {/* 3D Revolving Globe Background */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center opacity-40 mix-blend-screen pointer-events-none translate-y-32">
+        <Globe />
       </div>
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
