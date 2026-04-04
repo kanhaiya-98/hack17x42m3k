@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const TRANSACTIONS = [
   { id: "UPI/CR/260401/847291034", merchant: "Swiggy", type: "Food & Dining", amount: -847, date: "Today, 1:23 PM", icon: "🍔" },
@@ -17,16 +16,8 @@ const TRANSACTIONS = [
 ];
 
 export default function ZeroBankDashboard() {
-  const router = useRouter();
-  const [email, setEmail] = useState("rahul.sharma@gmail.com");
   const [mfaVisible, setMfaVisible] = useState(false);
   const [otp, setOtp] = useState("");
-  const [activeTab, setActiveTab] = useState("overview");
-
-  useEffect(() => {
-    const stored = sessionStorage.getItem("zerobank_email");
-    if (stored) setEmail(stored);
-  }, []);
 
   const actions = [
     { icon: "➕", label: "Add Money", color: "#0F4C81" },
