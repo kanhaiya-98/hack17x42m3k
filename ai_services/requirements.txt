@@ -18,3 +18,7 @@ opacus
 protobuf
 pydantic
 python-dotenv
+pandas
+httpx
+rich
+requests
