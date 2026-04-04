@@ -39,7 +39,7 @@ function guessIOCType(ioc: { type?: string; content?: string; ioc_type?: string 
 }
 
 export function HoneypotPanel() {
-  const [isActive, setIsActive] = useState(true);
+  const [isActive] = useState(true);
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
   const [visibleIOCs, setVisibleIOCs] = useState<IOCEntry[]>([]);
   const [error, setError] = useState(false);

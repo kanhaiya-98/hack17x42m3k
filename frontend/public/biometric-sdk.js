@@ -16,8 +16,7 @@
 
   function createEvent(type, data) {
     return {
-      session_id: sessionId,
-      ts: new Date().toISOString(),
+      timestamp_ms: performance.now(),
       event_type: type,
       ...data,
     };
@@ -27,7 +26,7 @@
   document.addEventListener('keydown', function (e) {
     lastKeyDownTime[e.code] = performance.now();
     eventBuffer.push(createEvent('keydown', {
-      key_code: e.code,
+      key: e.code,
       dwell_ms: null,
       flight_ms: null,
     }));
@@ -38,7 +37,7 @@
     const dwellMs = downTime ? performance.now() - downTime : null;
     delete lastKeyDownTime[e.code];
     eventBuffer.push(createEvent('keyup', {
-      key_code: e.code,
+      key: e.code,
       dwell_ms: dwellMs ? Math.round(dwellMs * 100) / 100 : null,
     }));
   });
@@ -100,7 +99,7 @@
 
     const batch = eventBuffer.splice(0, 50);
     try {
-      const res = await fetch(`${API_URL}/api/biometric/infer`, {
+      const res = await fetch(`${API_URL}/api/biometric/infer?session_id=${sessionId}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(batch),
@@ -110,7 +109,7 @@
         // Dispatch custom event for dashboard to pick up
         window.dispatchEvent(new CustomEvent('finshield:biometric', { detail: data }));
       }
-    } catch (err) {
+    } catch {
       // Silent fail — don't disrupt user experience
     }
   }
@@ -134,7 +133,7 @@
         sessionId = data.session_id;
         sessionStorage.setItem('finshield_session_id', sessionId);
       }
-    } catch (err) {
+    } catch {
       // Silent fail
     }
   }

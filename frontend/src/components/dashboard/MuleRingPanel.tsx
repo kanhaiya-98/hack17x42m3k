@@ -190,7 +190,7 @@ export function MuleRingPanel() {
           </motion.div>
         ))}
         {rings.length === 0 && !error && (
-          <p className="py-8 text-center text-xs text-white/30">No active mule rings. Click "Load Demo Mule Ring" to seed demo data.</p>
+          <p className="py-8 text-center text-xs text-white/30">No active mule rings. Click &quot;Load Demo Mule Ring&quot; to seed demo data.</p>
         )}
       </div>
     </div>
