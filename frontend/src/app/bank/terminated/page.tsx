@@ -1,6 +1,15 @@
 "use client";
 
+import { useState, useEffect } from "react";
+
 export default function ZeroBankTerminated() {
+  const [secId, setSecId] = useState("");
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setSecId(`SEC-${Date.now().toString(16).toUpperCase()}`);
+  }, []);
+
   return (
     <div style={{
       minHeight: "100vh",
@@ -50,7 +59,7 @@ export default function ZeroBankTerminated() {
         <div style={{ background: "#FEF2F2", borderRadius: 12, padding: "12px 16px", marginBottom: 28, border: "1px solid #FEE2E2" }}>
           <p style={{ fontSize: 12, color: "#991B1B", fontWeight: 600, marginBottom: 4 }}>Security Reference</p>
           <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#DC2626" }}>
-            {`SEC-${Date.now().toString(16).toUpperCase()}`}
+            {secId || "SEC-PENDING"}
           </p>
         </div>
 

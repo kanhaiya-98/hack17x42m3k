@@ -43,6 +43,7 @@ export default function Globe() {
         { location: [35.6762, 139.6503], size: 0.06 },// Tokyo
       ],
       // @ts-expect-error - Cobe types sometimes missing onRender
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       onRender: (state: Record<string, any>) => {
         // Revolving effect
         state.phi = phi;
